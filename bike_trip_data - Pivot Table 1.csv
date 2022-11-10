@@ -1,0 +1,10 @@
+COUNTA of rideable_type,member_casual,,
+weekday,casual,member,Grand Total
+1,2597,1830,4427
+2,1572,1995,3567
+3,1670,2395,4065
+4,1918,2729,4647
+5,2780,3459,6239
+6,3383,3725,7108
+7,3912,2906,6818
+Grand Total,17832,19039,36871
