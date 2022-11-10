@@ -1,0 +1,35 @@
+---
+title: "Cyclistic Case Study"
+author: "Prince Maynard"
+date: "2022-10-29"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+## Simple beginnings
+
+I started simple by loading in the proper packages, reading and assigning the data to an object called "trip_data", and calculating the total amount of casual riders in comparison to members.
+```{r}
+library(tidyverse)
+library(lubridate)
+trip_data <- read.csv("C:\\Users\\pgonl\\Downloads\\202209-divvy-publictripdata.csv")
+sum(trip_data$member_casual == "casual")
+sum(trip_data$member_casual == "member")
+```
+
+## First Objects 
+
+Firstly, I decided to create the objects that were to be used in order to find the difference between two columns. Those columns (started_at and ended_at) contained data on the duration of each trip per ride id.
+```{r}
+Ended <- (trip_data$ended_at)
+Started <- (trip_data$started_at)
+```
+
+## Finding the difference
+
+Once I finished making the first objects, I then find the difference using those objects and make sure the output comes out as a period. I then created a new object that has the details of the results assigned to it.
+```{r}
+as_tibble(as.period(difftime(Ended, Started)))
+Time_Diff <- as_tibble(as.period(difftime(Ended, Started)))
+```
